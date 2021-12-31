@@ -1,0 +1,3 @@
+browser: chrome
+desiredCapabilities:
+  acceptInsecureCerts: true
