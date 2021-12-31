@@ -8,6 +8,4 @@ public class Send implements IKeyword {
     public void execute(Object param) {
 
     }
-
-
 }
