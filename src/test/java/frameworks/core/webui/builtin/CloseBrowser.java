@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class CloseBrowser implements IKeyword {
     @Override
-    public void execute(Object param) {
+    public void execute(Object param1, Object param2) {
         closeBrowser();
     }
 

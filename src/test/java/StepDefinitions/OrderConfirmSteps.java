@@ -20,8 +20,8 @@ public class OrderConfirmSteps {
 
     }
 
-    @Then("^items info show in order confirm page$")
-    public void itemsInfoShowInOrderConfirmPage() {
+    @Then("^item info show in order confirm page$")
+    public void itemInfoShowInOrderConfirmPage() {
     }
 
     @And("^address info shows$")

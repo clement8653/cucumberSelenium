@@ -3,8 +3,6 @@ package frameworks.core.webui;
 import frameworks.core.keyword.KeywordExecutor;
 import org.openqa.selenium.WebElement;
 
-import javax.annotation.Nullable;
-
 public class WebUIKeywords {
     public static void openBrowser(String rawURL)  {
         KeywordExecutor.executeFromPlatform(KeywordExecutor.PLATFORM_WEB, "openBrowser", rawURL);
@@ -20,5 +18,9 @@ public class WebUIKeywords {
 
     public static void closeBrowser() {
         KeywordExecutor.executeFromPlatform(KeywordExecutor.PLATFORM_WEB, "closeBrowser");
+    }
+
+    public static void setText(WebElement element, String input) {
+        KeywordExecutor.executeFromPlatform(KeywordExecutor.PLATFORM_WEB, "setText", element, input);
     }
 }
