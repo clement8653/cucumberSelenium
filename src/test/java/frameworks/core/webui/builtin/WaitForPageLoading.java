@@ -8,8 +8,8 @@ import org.openqa.selenium.WebDriver;
 
 public class WaitForPageLoading implements IKeyword {
     @Override
-    public void execute(Object param) {
-        waitforElement((Integer) param);
+    public void execute(Object param1, Object param2) {
+        waitforElement((Integer) param1);
     }
 
     public static void waitforElement(int timeOut){

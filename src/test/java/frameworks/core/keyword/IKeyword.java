@@ -1,9 +1,8 @@
 package frameworks.core.keyword;
 
 import javax.annotation.Nullable;
-import java.io.FileNotFoundException;
 
 public interface IKeyword {
 
-    void execute(@Nullable Object param);
+    void execute(@Nullable Object param1, @Nullable Object param2);
 }

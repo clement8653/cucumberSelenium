@@ -6,9 +6,8 @@ import org.openqa.selenium.WebElement;
 public class Click implements IKeyword {
 
     @Override
-    public void execute(Object param) {
-
-        click((WebElement) param);
+    public void execute(Object param1, Object param2) {
+        click((WebElement) param1);
     }
 
     private void click(WebElement ele){

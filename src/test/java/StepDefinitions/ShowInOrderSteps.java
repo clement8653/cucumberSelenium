@@ -10,8 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class ShowInOrderSteps {
-    @Given("^Order is ready$")
-    public void orderIsReady() {
+    @Given("^item searched$")
+    public void itemSearched() {
         WebUIKeywords.openBrowser("https://thoughtworks.okta.com/");
     }
 
