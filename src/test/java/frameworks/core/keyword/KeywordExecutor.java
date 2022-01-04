@@ -1,7 +1,7 @@
 package frameworks.core.keyword;
 
+import javax.annotation.Nullable;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
@@ -13,7 +13,7 @@ public class KeywordExecutor {
     public static final String WEB_KEYWORD_PACKAGE = "frameworks.core.webui.builtin";
     public static final String API_KEYWORD_PACKAGE = "frameworks.core.api.builtin";
 
-    public static void executeFromPlatform(String platform, String keyWord, Object param){
+    public static void executeFromPlatform(String platform, String keyWord, @Nullable Object param){
         try {
             String aPackage = getPackage(platform);
             List<Class<?>> list = getAllClass(aPackage, keyWord);
@@ -21,7 +21,35 @@ public class KeywordExecutor {
             for (Class<?> cls : list) {
                 keywordList.add((IKeyword) cls.newInstance());
             }
-            keywordList.get(0).execute(param);
+            keywordList.get(0).execute(param, null);
+        } catch(Exception e){
+
+        }
+    }
+
+    public static void executeFromPlatform(String platform, String keyWord){
+        try {
+            String aPackage = getPackage(platform);
+            List<Class<?>> list = getAllClass(aPackage, keyWord);
+            List<IKeyword> keywordList = new ArrayList<>();
+            for (Class<?> cls : list) {
+                keywordList.add((IKeyword) cls.newInstance());
+            }
+            keywordList.get(0).execute(null, null);
+        } catch(Exception e){
+
+        }
+    }
+
+    public static void executeFromPlatform(String platform, String keyWord, @Nullable Object param1, @Nullable Object param2){
+        try {
+            String aPackage = getPackage(platform);
+            List<Class<?>> list = getAllClass(aPackage, keyWord);
+            List<IKeyword> keywordList = new ArrayList<>();
+            for (Class<?> cls : list) {
+                keywordList.add((IKeyword) cls.newInstance());
+            }
+            keywordList.get(0).execute(param1, param2);
         } catch(Exception e){
 
         }

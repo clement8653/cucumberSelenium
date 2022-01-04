@@ -4,11 +4,19 @@
 Feature: testLogin
 
   @SmokeTest
-  Scenario: login taobao
+  Scenario Outline: login taobao with valid validations
     Given I am going to login taobao
-    And I input <userName> and <passWord>
+    When I input <userName> and <passWord>
     Then I should login taobao
+    Examples:
+    | userName | passWord |
+    | 13379275604    | XXXXXXXXXX    |
 
-#    Examples:
-#    | userName | passWord |
-#    | user1    | pass1    |
+  Scenario Outline: login taobao with invalid validations
+    Given I am going to login taobao
+    When I input <userName> and <passWord>
+    Then I should not login taobao
+    Examples:
+      | userName | passWord |
+      | user1    | pass1    |
+      | @!#@#E    | DWQD!@312    |

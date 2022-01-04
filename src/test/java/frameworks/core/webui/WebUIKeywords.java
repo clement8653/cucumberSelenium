@@ -15,4 +15,12 @@ public class WebUIKeywords {
     public static void waitForPageLoading(int timeOut)  {
         KeywordExecutor.executeFromPlatform(KeywordExecutor.PLATFORM_WEB, "waitForPageLoading", timeOut);
     }
+
+    public static void closeBrowser() {
+        KeywordExecutor.executeFromPlatform(KeywordExecutor.PLATFORM_WEB, "closeBrowser");
+    }
+
+    public static void setText(WebElement element, String input) {
+        KeywordExecutor.executeFromPlatform(KeywordExecutor.PLATFORM_WEB, "setText", element, input);
+    }
 }

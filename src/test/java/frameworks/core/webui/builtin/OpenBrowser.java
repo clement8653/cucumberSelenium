@@ -5,8 +5,8 @@ import frameworks.core.webui.driver.DriverFactory;
 
 public class OpenBrowser implements IKeyword {
     @Override
-    public void execute(Object param){
-        openBrowser(param.toString());
+    public void execute(Object param1, Object param2){
+        openBrowser(param1.toString());
     }
 
     private void openBrowser(String rawURL){

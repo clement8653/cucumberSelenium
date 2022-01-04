@@ -1,31 +1,44 @@
 package StepDefinitions;
 
-import cucumber.api.java.en.And;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import frameworks.core.webui.WebUIKeywords;
 import frameworks.core.webui.driver.DriverFactory;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
+import org.openqa.selenium.support.PageFactory;
+import pages.LoginPage;
 
 public class LoginSteps {
+    WebDriver driver;
+    LoginPage loginPage;
+
     @Given("^I am going to login taobao$")
-    public void navigateToTaobao(){
-        WebUIKeywords.openBrowser("https://thoughtworks.okta.com/");
+    public void loginTaobao() {
+        WebUIKeywords.openBrowser("https://www.taobao.com/");
     }
 
-
-    @And("^I input <userName> and <passWord>$")
-    public void inputUserNameAndPassWord(){
-        WebDriver driver = DriverFactory.getWebDriver();
-        WebElement ele = driver.findElement(By.id("okta-signin-submit12312313"));
-        WebUIKeywords.click(ele);
+    @When("^I input (.*) and (.*)$")
+    public void inputUserNameAndPassWord(String userName, String passWord){
+        driver = DriverFactory.getWebDriver();
+        loginPage = new LoginPage(driver);
+        PageFactory.initElements(driver, loginPage);
+        loginPage.loginTaobao(userName, passWord);
     }
 
     @Then("^I should login taobao$")
+    public void verifyNotLogin(){
+
+    }
+
+    @Then("^I should not login taobao$")
     public void verifyLogin(){
 
+    }
+
+    @After
+    public void tearDown(){
+        WebUIKeywords.closeBrowser();
     }
 }
