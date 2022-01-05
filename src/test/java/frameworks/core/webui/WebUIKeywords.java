@@ -23,4 +23,12 @@ public class WebUIKeywords {
     public static void setText(WebElement element, String input) {
         KeywordExecutor.executeFromPlatform(KeywordExecutor.PLATFORM_WEB, "setText", element, input);
     }
+
+    public static void swithToAvailableTab(int index) {
+        KeywordExecutor.executeFromPlatform(KeywordExecutor.PLATFORM_WEB, "swithToAvailableTab", index);
+    }
+
+    public static void verifyElementPresent(String xPath)  {
+        KeywordExecutor.executeFromPlatform(KeywordExecutor.PLATFORM_WEB, "verifyElementPresent", xPath);
+    }
 }
