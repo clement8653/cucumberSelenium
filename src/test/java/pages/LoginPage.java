@@ -22,8 +22,8 @@ public class LoginPage {
 //    private WebElement button_logIn;
 
     By byToLogin = By.xpath("//a[contains(text(), \"请登录\")]");
-    By byUserName = By.id("fm-login-id123123123");
-    By byPassWord = By.id("fm-login-password123123");
+    By byUserName = By.id("fm-login-id");
+    By byPassWord = By.id("fm-login-password");
     By byLogin = By.xpath("//button[@type=\"submit\"]");
 
     public LoginPage(WebDriver driver){
