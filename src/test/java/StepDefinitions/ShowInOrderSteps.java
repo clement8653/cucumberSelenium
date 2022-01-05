@@ -3,6 +3,7 @@ package StepDefinitions;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import frameworks.core.webui.WebUIKeywords;
 import frameworks.core.webui.driver.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import pages.*;
@@ -40,6 +41,7 @@ public class ShowInOrderSteps {
     public void clickPlaceOrder() {
         itemDetails.addItemIntoCart();
         itemDetails.goToCart();
+        WebUIKeywords.delay(5);
         orderPage.selectAllItemsInShop();
     }
 

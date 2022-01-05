@@ -31,4 +31,12 @@ public class WebUIKeywords {
     public static void verifyElementPresent(String xPath)  {
         KeywordExecutor.executeFromPlatform(KeywordExecutor.PLATFORM_WEB, "verifyElementPresent", xPath);
     }
+
+    public static void waitForElementClickable(WebElement element, int timeOut) {
+        KeywordExecutor.executeFromPlatform(KeywordExecutor.PLATFORM_WEB, "waitForElementClickable", element, timeOut);
+    }
+
+    public static void delay(int timeOut)  {
+        KeywordExecutor.executeFromPlatform(KeywordExecutor.PLATFORM_WEB, "delay", timeOut);
+    }
 }
