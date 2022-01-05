@@ -4,7 +4,6 @@ Feature: Add items into cart
     When search item and add apple into cart
     Then this item shows in cart
 
-
 #
 #  Scenario: add several items into cart
 #    Given login taobao

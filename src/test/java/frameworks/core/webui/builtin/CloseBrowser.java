@@ -11,7 +11,11 @@ public class CloseBrowser implements IKeyword {
     }
 
     private void closeBrowser(){
-        WebDriver webDriver = DriverFactory.getWebDriver();
-        webDriver.quit();
+        try {
+            WebDriver webDriver = DriverFactory.getWebDriver();
+            webDriver.quit();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
