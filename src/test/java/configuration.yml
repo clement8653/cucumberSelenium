@@ -1,3 +1,5 @@
 browser: chrome
+runningMode: remote
+gridURL: http://192.168.56.100:4444/wd/hub
 desiredCapabilities:
   acceptInsecureCerts: true
