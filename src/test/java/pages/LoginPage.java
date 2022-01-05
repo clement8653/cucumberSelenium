@@ -24,8 +24,11 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    public void loginTaobao(String userName, String passWord) {
+    public void goToLoginPage(){
         WebUIKeywords.click(button_toLogIn);
+    }
+
+    public void loginTaobao(String userName, String passWord) {
         WebUIKeywords.setText(input_userName, userName);
         WebUIKeywords.setText(input_passWord, passWord);
         WebUIKeywords.click(button_logIn);
