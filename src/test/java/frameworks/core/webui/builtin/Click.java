@@ -1,6 +1,7 @@
 package frameworks.core.webui.builtin;
 
 import frameworks.core.keyword.IKeyword;
+import frameworks.core.webui.WebUIKeywords;
 import org.openqa.selenium.WebElement;
 
 public class Click implements IKeyword {
@@ -10,12 +11,18 @@ public class Click implements IKeyword {
         click((WebElement) param1);
     }
 
-    private void click(WebElement ele){
+    private void click(WebElement ele) {
         try {
-            WaitForPageLoading.waitforElement(60);
+            WebUIKeywords.waitForElementClickable(ele, 5);
             ele.click();
-        }catch (Exception e){
+        }catch(Exception e){
             e.printStackTrace();
+        }finally {
+            if(ele.toString().contains("no such element: Unable to locate element")) {
+                WebUIKeywords.waitForPageLoading(60);
+                System.out.println("second click");
+                ele.click();
+            }
         }
     }
 }
