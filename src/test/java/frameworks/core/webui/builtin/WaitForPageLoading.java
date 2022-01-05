@@ -13,17 +13,22 @@ public class WaitForPageLoading implements IKeyword {
     }
 
     public static void waitforElement(int timeOut){
-        boolean isLoaded =false;
-        WebDriver driver = DriverFactory.getWebDriver();
+        try{
+            boolean isLoaded =false;
+            WebDriver driver = DriverFactory.getWebDriver();
             String script = "var jQueryFlag = true;"+
-                            "if (window.jQuery !=undefined) {jQueryFlag = (jQuery.active ==0)}"+
-                            "return document.readyState ==='complete' && jQueryFlag;";
-        while(!isLoaded && timeOut-->0) {
-            try{
-                isLoaded = (Boolean) ((JavascriptExecutor) driver).executeScript(script);
-            }catch (Exception e){
-                isLoaded = false;
+                    "if (window.jQuery !=undefined) {jQueryFlag = (jQuery.active ==0)}"+
+                    "return document.readyState ==='complete' && jQueryFlag;";
+            while(!isLoaded && timeOut-->0) {
+                try{
+                    isLoaded = (Boolean) ((JavascriptExecutor) driver).executeScript(script);
+                }catch (Exception e){
+                    isLoaded = false;
+                }
             }
+        }catch (Exception e){
+            e.printStackTrace();
         }
+
     }
 }

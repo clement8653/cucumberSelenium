@@ -11,7 +11,11 @@ public class Click implements IKeyword {
     }
 
     private void click(WebElement ele){
-        WaitForPageLoading.waitforElement(60);
-        ele.click();
+        try {
+            WaitForPageLoading.waitforElement(60);
+            ele.click();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
