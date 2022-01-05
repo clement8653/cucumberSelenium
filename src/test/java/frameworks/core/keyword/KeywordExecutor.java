@@ -72,7 +72,7 @@ public class KeywordExecutor {
                     continue;
                 }
                 for (String fileName : f.list()) {
-                    if(fileName.toLowerCase(Locale.ROOT).contains(keyword.toLowerCase(Locale.ROOT))){
+                    if(fileName.toLowerCase(Locale.ROOT).equals(keyword.toLowerCase(Locale.ROOT)+".class")){
                         classes.add(cld.loadClass((packageName + "." + fileName).replaceAll("\\.class", "")));
                     }
                 }
