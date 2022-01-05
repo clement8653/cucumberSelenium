@@ -10,7 +10,12 @@ public class OpenBrowser implements IKeyword {
     }
 
     private void openBrowser(String rawURL){
-        DriverFactory.openWebDriver();
-        DriverFactory.getWebDriver().get(rawURL);
+        try{
+            DriverFactory.openWebDriver();
+            DriverFactory.getWebDriver().get(rawURL);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 }

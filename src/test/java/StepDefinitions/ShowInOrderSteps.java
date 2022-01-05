@@ -3,10 +3,8 @@ package StepDefinitions;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import frameworks.core.webui.WebUIKeywords;
 import frameworks.core.webui.driver.DriverFactory;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 import pages.*;
 
 public class ShowInOrderSteps {
@@ -18,18 +16,12 @@ public class ShowInOrderSteps {
     OrderPage orderPage;
 
     public void setUp(){
-        WebUIKeywords.openBrowser("https://www.taobao.com");
         driver = DriverFactory.getWebDriver();
         loginPage = new LoginPage(driver);
         searchItemsPage = new SearchItemsPage(driver);
         itemsListPage = new ItemsListPage(driver);
         itemDetails = new ItemDetails(driver);
         orderPage = new OrderPage(driver);
-        PageFactory.initElements(driver, loginPage);
-        PageFactory.initElements(driver, searchItemsPage);
-        PageFactory.initElements(driver, itemsListPage);
-        PageFactory.initElements(driver, itemDetails);
-        PageFactory.initElements(driver, orderPage);
     }
 
     @Given("^item searched$")
@@ -54,10 +46,6 @@ public class ShowInOrderSteps {
     @Then("^info should be shown in the page$")
     public void infoShouldBeShownInThePage() {
         orderPage.verifyItemInfo("5949");
-//        tearDown();
     }
 
-    public void tearDown(){
-        WebUIKeywords.closeBrowser();
-    }
 }

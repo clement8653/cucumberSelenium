@@ -16,12 +16,17 @@ public class VerifyElementPresent implements IKeyword {
     }
 
     private void verifyElementPresent(String xPath){
-        WebDriver driver = DriverFactory.getWebDriver();
-        WebElement element = driver.findElement(By.xpath(xPath));
-        if(element != null){
-            Assert.assertTrue(true);
-        }else{
-            Assert.assertFalse(false);
+        try{
+            WebDriver driver = DriverFactory.getWebDriver();
+            WebElement element = driver.findElement(By.xpath(xPath));
+            if(element != null){
+                Assert.assertTrue(true);
+            }else{
+                Assert.assertFalse(false);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
+
     }
 }

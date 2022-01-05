@@ -4,10 +4,8 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import frameworks.core.webui.WebUIKeywords;
 import frameworks.core.webui.driver.DriverFactory;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 import pages.ItemDetails;
 import pages.ItemsListPage;
 import pages.LoginPage;
@@ -21,16 +19,11 @@ public class AddItemToCartSteps {
     SearchItemsPage searchItemsPage;
 
     public void setUp(){
-        WebUIKeywords.openBrowser("https://www.taobao.com");
         driver = DriverFactory.getWebDriver();
         loginPage = new LoginPage(driver);
         searchItemsPage = new SearchItemsPage(driver);
         itemsListPage = new ItemsListPage(driver);
         itemDetails = new ItemDetails(driver);
-        PageFactory.initElements(driver, loginPage);
-        PageFactory.initElements(driver, searchItemsPage);
-        PageFactory.initElements(driver, itemsListPage);
-        PageFactory.initElements(driver, itemDetails);
     }
 
     @Given("^login taobao$")

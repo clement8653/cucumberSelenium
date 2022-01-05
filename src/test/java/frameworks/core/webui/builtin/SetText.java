@@ -13,8 +13,12 @@ public class SetText implements IKeyword {
     }
 
     private void setText(WebElement element, String input){
-        element.clear();
-        //we may face textarea and other scenarios, just sendKeys here for now, later to improve
-        element.sendKeys(input);
+        try{
+            element.clear();
+            //we may face textarea and other scenarios, just sendKeys here for now, later to improve
+            element.sendKeys(input);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

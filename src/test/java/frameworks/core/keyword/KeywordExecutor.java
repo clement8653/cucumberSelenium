@@ -23,7 +23,7 @@ public class KeywordExecutor {
             }
             keywordList.get(0).execute(param, null);
         } catch(Exception e){
-
+            e.printStackTrace();
         }
     }
 
@@ -37,7 +37,7 @@ public class KeywordExecutor {
             }
             keywordList.get(0).execute(null, null);
         } catch(Exception e){
-
+            e.printStackTrace();
         }
     }
 
@@ -51,7 +51,8 @@ public class KeywordExecutor {
             }
             keywordList.get(0).execute(param1, param2);
         } catch(Exception e){
-
+            System.out.println("execute multi");
+            e.printStackTrace();
         }
     }
 
