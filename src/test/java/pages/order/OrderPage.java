@@ -1,4 +1,4 @@
-package pages;
+package pages.order;
 
 import frameworks.core.webui.WebUIKeywords;
 import org.openqa.selenium.By;

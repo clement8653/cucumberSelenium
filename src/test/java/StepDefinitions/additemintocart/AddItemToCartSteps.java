@@ -1,16 +1,14 @@
-package StepDefinitions;
+package StepDefinitions.additemintocart;
 
-import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import frameworks.core.webui.WebUIKeywords;
 import frameworks.core.webui.driver.DriverFactory;
 import org.openqa.selenium.WebDriver;
-import pages.ItemDetails;
-import pages.ItemsListPage;
-import pages.LoginPage;
-import pages.SearchItemsPage;
+import pages.additemintocart.ItemDetails;
+import pages.additemintocart.ItemsListPage;
+import pages.login.LoginPage;
+import pages.additemintocart.SearchItemsPage;
 
 public class AddItemToCartSteps {
     WebDriver driver;
