@@ -1,4 +1,4 @@
-package StepDefinitions;
+package StepDefinitions.order;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -6,7 +6,11 @@ import cucumber.api.java.en.When;
 import frameworks.core.webui.WebUIKeywords;
 import frameworks.core.webui.driver.DriverFactory;
 import org.openqa.selenium.WebDriver;
-import pages.*;
+import pages.additemintocart.ItemDetails;
+import pages.additemintocart.ItemsListPage;
+import pages.additemintocart.SearchItemsPage;
+import pages.login.LoginPage;
+import pages.order.OrderPage;
 
 public class ShowInOrderSteps {
     WebDriver driver;

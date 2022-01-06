@@ -1,4 +1,4 @@
-package pages;
+package pages.additemintocart;
 
 import frameworks.core.webui.WebUIKeywords;
 import org.openqa.selenium.By;

@@ -1,4 +1,4 @@
-package StepDefinitions;
+package StepDefinitions.confirmorder;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -6,7 +6,11 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import frameworks.core.webui.driver.DriverFactory;
 import org.openqa.selenium.WebDriver;
-import pages.*;
+import pages.additemintocart.ItemDetails;
+import pages.additemintocart.ItemsListPage;
+import pages.additemintocart.SearchItemsPage;
+import pages.login.LoginPage;
+import pages.order.OrderPage;
 
 public class OrderConfirmSteps {
     WebDriver driver;
