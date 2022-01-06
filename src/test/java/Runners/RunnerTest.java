@@ -3,10 +3,7 @@ package Runners;
 import com.cucumber.listener.ExtentProperties;
 import com.cucumber.listener.Reporter;
 import cucumber.api.CucumberOptions;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import cucumber.api.junit.Cucumber;
-import frameworks.core.webui.WebUIKeywords;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -20,7 +17,7 @@ import java.io.File;
         format = {"json:target/cucumber-report.json","pretty"},
         features = "src/test/resources/Features",
         glue = {"StepDefinitions"})
-public class LoginRunnerTest {
+public class RunnerTest {
         @BeforeClass
         public static void setup() {
                 ExtentProperties extentProperties = ExtentProperties.INSTANCE;
