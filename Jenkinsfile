@@ -12,7 +12,7 @@ pipeline {
                 // Get some code from a GitHub repository
 //                 git 'https://github.com/clement8653/cucumberSelenium.git'
 
-                // sh "printenv"
+                sh "printenv"
 //                 sh "mvn clean test"
 
                 // To run Maven on a Windows agent, use
