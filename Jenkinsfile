@@ -2,11 +2,9 @@ pipeline {
     agent any
 
     stages {
-
-        checkout scm
-
         stage('Running Automation') {
             steps {
+                checkout scm
                 // Get some code from a GitHub repository
 //                 git 'https://github.com/clement8653/cucumberSelenium.git'
 
