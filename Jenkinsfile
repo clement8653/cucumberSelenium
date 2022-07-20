@@ -2,11 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-                }
-            }
+
+        checkout scm
+
         stage('Running Automation') {
             steps {
                 // Get some code from a GitHub repository
