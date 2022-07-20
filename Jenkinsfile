@@ -13,26 +13,23 @@ pipeline {
 //                 git 'https://github.com/clement8653/cucumberSelenium.git'
 
                 // sh "printenv"
-                sh "mvn clean test"
+//                 sh "mvn clean test"
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
-        stage('Report'){
+        stage('Prepare report'){
             steps{
-                post {
-                    always{
-                        publishHTML ([
-                            allowMissing: false,
-                            alwaysLinkToLastBuild: false,
-                            keepAll: true,
-                            reportDir: 'target/extent-report',
-                            reportFiles: 'report.html',
-                            reportName: 'My Report'
-                            ])
-                    }
-                }
+                publishHTML ([
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll: true,
+                    reportDir: 'target/extent-report',
+                    reportFiles: 'report.html',
+                    reportName: 'My Report'
+                    ])
+
             }
         }
     }
